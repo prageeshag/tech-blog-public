@@ -1,3 +1,22 @@
 ./azure-terraform/credential.md
-./azure-terraform/devops-squad/.terraform*
-./azure-terraform/devops-squad/*.out
+
+# Compiled files
+*.tfstate
+*.tfstate.backup
+*.tfstate.lock.info
+
+# logs
+*.log
+
+# Directories
+.terraform/
+.vagrant/
+
+# SSH Keys
+*.pem
+
+# Backup files
+*.bak
+
+# Ignored Terraform files
+*gitignore*.tf
