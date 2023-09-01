@@ -1,1 +1,3 @@
-./azure-terraform/credntials.md
+./azure-terraform/credential.md
+./azure-terraform/devops-squad/.terraform*
+./azure-terraform/devops-squad/*.out
