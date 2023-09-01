@@ -1,9 +1,15 @@
-./azure-terraform/credential.md
+*azure-terraform/credential.md
+*plan.out
 
 # Compiled files
 *.tfstate
 *.tfstate.backup
 *.tfstate.lock.info
+*.terraform.lock.hcl
+
+#auto vars
+*auto.tfvars
+
 
 # logs
 *.log
@@ -20,3 +26,6 @@
 
 # Ignored Terraform files
 *gitignore*.tf
+
+# Ignore Mac .DS_Store files
+.DS_Store

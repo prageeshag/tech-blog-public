@@ -1,0 +1,7 @@
+az_subscription_id   = "<value>"
+az_tenant_id         = "<value>"
+az_client_id         = "<value>"
+az_client_secret     = "<value>"
+az_storage_account_access_key = "<value>"
+my_ui_account_object_id = "<value>"
+
