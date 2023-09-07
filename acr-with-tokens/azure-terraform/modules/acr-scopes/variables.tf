@@ -19,3 +19,5 @@ variable "actions" {
 }
 
 variable "key_vault_id" {}
+
+variable "token_expiry" {}

@@ -15,7 +15,7 @@ resource "azurerm_container_registry_token" "token" {
 resource "azurerm_container_registry_token_password" "token_pwd" {
   container_registry_token_id = azurerm_container_registry_token.token.id
   password1 {
-    expiry = "2024-03-22T17:57:36+08:00"
+    expiry = var.token_expiry
   }
 }
 

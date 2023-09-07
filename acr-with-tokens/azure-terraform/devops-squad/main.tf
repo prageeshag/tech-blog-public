@@ -14,9 +14,8 @@ variable "devops_apps" {
 }
 
 locals {
-
   read_repos = [for value in var.devops_apps : "repositories/${local.prefix-devops}/${value}/content/read"]
-  write_repos = [for value in var.devops_apps : "repositories/devops-squad/${value}/content/write"]
+  write_repos = [for value in var.devops_apps : "repositories/${local.prefix-devops}/${value}/content/write"]
 }
 
 output "modified_values_list" {
@@ -66,19 +65,12 @@ module "akv_devops_squad" {
 
 
 ####
-
-
 module "acr_scope_map_devops_builder" {
   source                = "../modules/acr-scopes"
   scope_map_name        = "devops-squad-builder"
   container_registry_name = data.terraform_remote_state.azr-shared-services.outputs.acr_shared_name
   resource_group_name     = data.terraform_remote_state.azr-shared-services.outputs.rg_shared_name
-  # actions = [
-  #   "repositories/devops-squad/app1/content/read",
-  #   "repositories/devops-squad/app1/content/write",
-  #   "repositories/devops-squad/app2/content/read",
-  #   "repositories/devops-squad/app2/content/write"
-  # ]
   actions = concat(local.read_repos,local.write_repos)
   key_vault_id = module.akv_devops_squad.id
+  token_expiry = "2024-03-22T17:57:36+08:00"
 }
