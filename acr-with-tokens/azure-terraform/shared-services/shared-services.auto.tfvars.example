@@ -1,0 +1,4 @@
+az_subscription_id   = "<value>"
+az_tenant_id         = "<value>"
+az_client_id         = "<value>"
+az_client_secret     = "<value>"
